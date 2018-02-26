@@ -10,6 +10,14 @@ class Date_helper_test extends CI_TestCase {
 
 	// ------------------------------------------------------------------------
 
+	public function test_nice_date()
+	{
+		$this->assertEquals('2016-11-01', nice_date('201611',   'Y-m-d'));
+		$this->assertEquals('2016-11-23', nice_date('20161123', 'Y-m-d'));
+	}
+
+	// ------------------------------------------------------------------------
+
 	public function test_now_local()
 	{
 		/*
@@ -288,7 +296,7 @@ class Date_helper_test extends CI_TestCase {
 		}
 
 		$this->assertArrayHasKey('UP3', timezones());
-		$this->assertEquals(0, timezones('non_existant'));
+		$this->assertEquals(0, timezones('non_existent'));
 	}
 
 	// ------------------------------------------------------------------------
